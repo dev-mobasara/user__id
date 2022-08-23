@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:users_id/model/model.dart';
 
 class UserPage extends StatelessWidget {
-  const UserPage({Key? key}) : super(key: key);
+  const UserPage({Key? key, required this.userdata}) : super(key: key);
+
+  final UserModel userdata;
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +30,17 @@ class UserPage extends StatelessWidget {
                     shape: BoxShape.circle),
               ),
               Text(
-                "John Done",
-                style: Theme.of(context).textTheme.headline3,
+                "Name: ${userdata.name}",
+                style: Theme.of(context).textTheme.headline4,
               ),
-              const Text(
-                "User Id : ",
+              Text(
+                "Id : ${userdata.id}",
               ),
-              const Text(
-                "User mail : ",
+              Text(
+                "Mail : ${userdata.email}",
+              ),
+              Text(
+                "Mail : ${userdata.postId}",
               ),
               const SizedBox(
                 height: 10,
@@ -44,8 +50,8 @@ class UserPage extends StatelessWidget {
                 endIndent: 30,
                 thickness: 1.5,
               ),
-              const Text(
-                "Description : ",
+              Text(
+                "Description : ${userdata.body}",
               ),
             ],
           ),

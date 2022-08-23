@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 import 'package:users_id/model/model.dart';
 
@@ -14,7 +13,6 @@ class APIService {
     if (response.statusCode == 200) {
       var user = [
         for (var users in jsonDecode(response.body)) UserModel.fromJson(users)
-        //UserModel.fromJson(users as Map<String, dynamic>)
       ];
       return user;
     } else {

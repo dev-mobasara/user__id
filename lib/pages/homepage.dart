@@ -36,16 +36,16 @@ class UsersDash extends StatelessWidget {
                 ),
               ),
               title: Text("Name : ${snapshot.data![index].name}"),
-              subtitle: Text("Number : ${snapshot.data![index].id}"),
-              trailing: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const UserPage()),
-                  );
-                },
-                child: const Text("Click here to see details"),
-              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => UserPage(
+                      userdata: snapshot.data![index],
+                    ),
+                  ),
+                );
+              },
             );
           },
         );
