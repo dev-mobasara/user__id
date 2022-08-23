@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:users_id/model/model.dart';
 
 class APIService {
-  static Future<List<UserModel>> fetchUserModel() async {
+  Future<List<UserModel>> fetchUserModel() async {
     final response = await http.get(
       Uri.parse(
           'https://metaspook.github.io/json_api/json/products_gadget.json'),
