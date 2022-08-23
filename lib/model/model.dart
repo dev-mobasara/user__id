@@ -1,4 +1,6 @@
 class UserModel {
+
+  //constructor date pass koray
   UserModel({
     required this.postId,
     required this.id,
