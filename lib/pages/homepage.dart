@@ -30,12 +30,16 @@ class UsersDash extends StatelessWidget {
           itemCount: snapshot.data!.length,
           itemBuilder: (context, index) {
             return ListTile(
+              contentPadding: const EdgeInsets.symmetric(
+                vertical: 10.0,
+                horizontal: 25.0,
+              ),
               leading: const CircleAvatar(
                 backgroundImage: NetworkImage(
                   "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg/800px-Andrzej_Person_Kancelaria_Senatu.jpg",
                 ),
               ),
-              title: Text("Name : ${snapshot.data![index].name}"),
+              title: Text("User ID : ${snapshot.data![index].id}"),
               onTap: () {
                 Navigator.push(
                   context,

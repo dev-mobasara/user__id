@@ -19,8 +19,8 @@ class UserPage extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                height: 180,
-                width: 180,
+                height: 150,
+                width: 150,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: NetworkImage(
@@ -29,21 +29,58 @@ class UserPage extends StatelessWidget {
                         fit: BoxFit.cover),
                     shape: BoxShape.circle),
               ),
-              Text(
-                "Name: ${userdata.name}",
-                style: Theme.of(context).textTheme.headline4,
-              ),
-              Text(
-                "Id : ${userdata.id}",
-              ),
-              Text(
-                "Mail : ${userdata.email}",
-              ),
-              Text(
-                "Mail : ${userdata.postId}",
-              ),
               const SizedBox(
-                height: 10,
+                height: 15,
+              ),
+              Text(
+                userdata.name,
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Id : ${userdata.id}",
+                          style: const TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "Mail : ${userdata.email}",
+                          style: const TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "Mail : ${userdata.postId}",
+                          style: const TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
               const Divider(
                 indent: 30,
@@ -51,7 +88,20 @@ class UserPage extends StatelessWidget {
                 thickness: 1.5,
               ),
               Text(
+                "Post Id : ${userdata.postId}",
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
                 "Description : ${userdata.body}",
+                style: const TextStyle(
+                  fontSize: 16,
+                ),
               ),
             ],
           ),
